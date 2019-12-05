@@ -506,10 +506,8 @@ async function run() {
     credentials = await indy.proverFetchCredentialsForProofReq(searchForJApplyLoanProofRequest, 'attr1_referent', 100)
     credForAttr1 = credentials[0]['cred_info'];
 
-    credentials2 = await indy.proverFetchCredentialsForProofReq(searchForJApplyLoanProofRequest, 'attr2_referent', 100)
-    credForAttr2 = credentials2[0]['cred_info'];
-
-    console.log(credForAttr2);
+    await indy.proverFetchCredentialsForProofReq(searchForJApplyLoanProofRequest, 'attr2_referent', 100)
+    credForAttr2 = credentials[0]['cred_info'];
 
     await indy.proverFetchCredentialsForProofReq(searchForJApplyLoanProofRequest, 'predicate1_referent', 100)
     credForPredicate1 = credentials[0]['cred_info'];
